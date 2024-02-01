@@ -2,8 +2,9 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/(pages)/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/_components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/_components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
@@ -15,6 +16,22 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "retro", {
+      karala: {
+        "primary": "#60a5fa",
+        "secondary": "#7dd3fc",
+        "accent": "#6ee7b7",
+        "neutral": "#ffffff",
+        "base-100": "#fef3c7",
+        "info": "#fde68a",
+        "success": "#4ade80",
+        "warning": "#facc15",
+        "error": "#fb7185",
+      }
+    }]
+  }
+
 }
 export default config
