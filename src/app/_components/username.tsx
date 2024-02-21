@@ -7,13 +7,16 @@ type Props = {
     username: string
 }
 function Username({ username }: Props) {
+    // if (!username) return <div className="skeleton mb-1 rounded w-full h-6"></div>
     return (
         <div className="user flex truncate">
             <p className="truncate">
-                {username}
-                &apos;s
+                {username
+                    ? username
+                    : "Lorem Ipsum"}
+
             </p>
-            &nbsp;Notes
+            &apos;s &nbsp;Notes
         </div>
     );
 }

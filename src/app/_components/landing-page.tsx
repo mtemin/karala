@@ -39,11 +39,11 @@ export default async function LandingPage() {
           <h1 className="text-5xl font-bold mb-5 text-center">
             An app to unify all of your ideas, documents, plans.
             <br />
-            Welcome to <span className="karala text-8xl">Karala</span>
+            Welcome to <span className="font-brooklyn text-8xl">Karala</span>
           </h1>
-          <p className="text-xl">
-            An app to store and your notes, collaborate with your teammates and work on the same workspace.
-          </p>
+          {/* <p className="text-xl">
+            Store your notes...
+          </p> */}
           {isLoggedIn
             ?
             <>

@@ -1,14 +1,16 @@
-
 import React from 'react';
 import UserMenu from "@/app/_components/usermenu";
-import Document from "@/app/_components/note";
+import Note from "@/app/_components/note";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import ContentBlockModal from "@/app/_components/content-block-modal";
+import { supabase } from '@/app/lib/supabase';
+import { useQuery } from '@tanstack/react-query';
+import { noteListAtom } from '@/app/_stateStore/atoms';
+import { useAtom } from 'jotai';
 
 export default async function Dashboard() {
-    const { isAuthenticated, getUser } = getKindeServerSession();
-    const isLoggedIn: boolean = await isAuthenticated();
-    const user = await getUser();
+
+    let isLoggedIn = true;
 
 
     return (
@@ -18,7 +20,7 @@ export default async function Dashboard() {
                 // : null
             }
             <UserMenu></UserMenu>
-            <Document></Document>
+            <Note></Note>
         </div>
     );
 }
