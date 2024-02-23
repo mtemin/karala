@@ -4,8 +4,13 @@
 
 @layer components{
     .icon-active{
-        @apply ml-10
+        @apply ml-10;
     }
+
+    .sidebar-hidden{
+        @apply ml-[calc(-20%+1.25rem)] max-lg:ml-[calc(-33%+1.25rem)] max-sm:ml-[calc(-95%+1.5rem)] ;
+    }
+
 }
 
 html,body{

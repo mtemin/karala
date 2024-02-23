@@ -25,7 +25,7 @@ function AddNewNote() {
       <span className="icon mr-1">
         <AddPageIcon className="w-4 h-4" />
       </span>
-      <p className="">Add New Note</p>
+      <p className="white-space-nowrap truncate">Add New Note</p>
     </div>
   );
 }

@@ -36,10 +36,10 @@ export default async function LandingPage() {
       <div className="max-w-screen-2xl h-full mx-auto">
         <div className="flex flex-col justify-center items-center h-full w-full mx-auto">
 
-          <h1 className="text-5xl font-bold mb-5 text-center">
+          <h1 className="text-5xl max-sm:text-3xl font-bold mb-5 text-center">
             An app to unify all of your ideas, documents, plans.
             <br />
-            Welcome to <span className="font-brooklyn text-8xl">Karala</span>
+            Welcome to <span className="font-brooklyn max-sm:text-6xl text-8xl">Karala</span>
           </h1>
           {/* <p className="text-xl">
             Store your notes...
@@ -53,7 +53,7 @@ export default async function LandingPage() {
             </>
             :
             <RegisterLink
-              className="bg-primary text-base-100 px-6 py-2 rounded mt-6 text-xl font-medium">
+              className="bg-primary text-base-100 px-6 py-2 rounded mt-6 text-xl max-sm:text-lg font-medium">
               Join Karala
             </RegisterLink>
           }

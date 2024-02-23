@@ -16,7 +16,7 @@ export default function Note() {
     //     }) )
     // }
     return (
-        <section id="note" className="w-full h-screen flex flex-col justify-between bg-base-200 px-24 py-10">
+        <section id="note" className="w-full h-screen flex flex-col justify-between bg-base-200 px-24 py-10 max-sm:px-12">
             {currentNoteTitle &&
                 <textarea
                     value={currentNoteTitle}

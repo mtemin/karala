@@ -60,7 +60,7 @@ export default function NoteList() {
 
   return (
     <div id="notes"
-      className="max-h-[40vh] h-[40vh] overflow-scroll"
+      className="max-h-[40vh] h-[40vh] w-full overflow-y-scroll overflow-x-hidden"
     >
       {/* <p id="note-groups"
                     className="font-bold text-xl flex mb-2 items-center cursor-pointer hover:opacity-80 truncate">
@@ -89,7 +89,7 @@ export default function NoteList() {
           // filteredNotes?.map((note: Note) =>
           <div
             key={note.domId}
-            className="note mb-1 grid grid-cols-8 gap-1 items-center cursor-pointer"
+            className="note mb-1 grid grid-cols-8 gap-0 items-center cursor-pointer"
             id={`note-${note.domId}`}
             onClick={() => {
               if (note.description && note.title) {

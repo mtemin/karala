@@ -9,12 +9,14 @@ export default function SearchNote() {
 
   function searchHandler(event: any) {
     let lowercasedSearch = event.target.value.toLowerCase();
-    setSearch(lowercasedSearch)
+    // setSearch(lowercasedSearch)
+    console.log(lowercasedSearch)
   }
 
   return (
     <div className="z-10 search mb-3 flex items-center">
-      <label htmlFor="searchNotes" className="absolute p-1 cursor-pointer bg-base-300 rounded-full">
+      <label
+        htmlFor="searchNotes" className="absolute p-1 cursor-pointer bg-base-300 rounded-full">
         <SearchIcon className='w-5 h-5 relative' />
       </label>
       <input

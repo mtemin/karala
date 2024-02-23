@@ -1,4 +1,4 @@
-import { Atom, atom } from 'jotai';
+import { atom } from 'jotai';
 
 // const currentNoteAtom = ({
 //   "title": "New Title",
@@ -8,9 +8,10 @@ const currentNoteIdAtom = atom<number | null>(null)
 const currentTitleAtom = atom<string | null>(null);
 const currentDescriptionAtom = atom<string | null>(null);
 const currentUserAtom = atom({ test: "test" });
-const searchAtom = atom("");
+const searchAtom = atom<string>("");
 const noteListAtom = atom<Note[]>([]);
-const onlineAtom = atom(false);
+const onlineAtom = atom<boolean>(false);
 const themeAtom = atom<string>("default");
+const isSidebarVisibleAtom = atom<boolean>(true);
 
-export { currentTitleAtom, currentDescriptionAtom, currentUserAtom, searchAtom, noteListAtom, onlineAtom, themeAtom, currentNoteIdAtom }
+export { currentTitleAtom, currentDescriptionAtom, currentUserAtom, searchAtom, noteListAtom, onlineAtom, themeAtom, currentNoteIdAtom, isSidebarVisibleAtom }
