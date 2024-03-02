@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Ubuntu } from 'next/font/google';
 import './globals.css';
 
-import ReactQueryClientProvider from './_components/react-query-client-provider';
-import ThemeProvider from './_components/theme-provider';
+import ReactQueryClientProvider from './_components/provider-react-query-client';
+import ThemeProvider from './_components/provider-theme';
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -31,14 +31,12 @@ const metadata: Metadata = {
 }
 
 
-//Notion-clone-42 password
-
 export default function RootLayout({ children, }: { children: React.ReactNode }) {
   return (
-    <ReactQueryClientProvider>
-      <ThemeProvider>
+    <ThemeProvider>
+      <ReactQueryClientProvider>
         <body className={ubuntu.className}>{children}</body>
-      </ThemeProvider>
-    </ReactQueryClientProvider>
+      </ReactQueryClientProvider>
+    </ThemeProvider>
   )
 }
