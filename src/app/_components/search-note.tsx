@@ -21,7 +21,7 @@ export default function SearchNote() {
       </label>
       <input
         placeholder="Search in notes..."
-        className="resize-none h-8 w-5 rounded-full py-1 pl-8 text-sm bg-base-300 transition-all duration-500 hover:w-full focus:w-full focus-"
+        className="resize-none h-8 w-5 rounded-full py-1 pl-8 text-sm bg-base-300 text-content transition-all duration-500 hover:w-full focus:w-full focus-"
         name="search"
         id="searchNotes"
         onChange={searchHandler}
