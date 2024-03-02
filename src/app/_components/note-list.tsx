@@ -1,35 +1,31 @@
-"use client";
-import React, { useEffect } from 'react';
+"use client"
 import PageIcon from './i-blank-page';
-import AddNewNote from './add-new-note';
-import { createClient } from '@supabase/supabase-js';
-import { useAtom, PrimitiveAtom } from 'jotai';
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-// import { getNotes, addNote, updateNote } from '../api/notesApi';
-import { currentDescriptionAtom, currentTitleAtom, noteListAtom, searchAtom, onlineAtom, currentNoteIdAtom } from '../_stateStore/atoms';
+import { useAtom } from 'jotai';
+import { currentDescriptionAtom, currentTitleAtom, noteListAtom, searchAtom, onlineAtom, currentNoteIdAtom, currentUserAtom } from '../_stateStore/atoms';
 import DeleteNote from './delete-note';
 import { supabase } from '../lib/supabase';
-import useNoteQuery from '../hooks/useNoteQuery';
-import { addNotesMutation } from '../hooks/useUpdateNotesMutation';
-import { queryClient } from './react-query-client-provider';
+import { queryClient } from './provider-react-query-client';
+import useNoteQuery from '../_hooks/useNoteQuery';
+import useUserQuery from '../_hooks/useUserQuery';
+import { useAuthQuery } from '../_hooks/useAuthQuery';
+import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/dist/types/server';
+import Note from './note';
+import { KindeUser } from '@kinde-oss/kinde-auth-nextjs/dist/types';
 
-// import { handleInserts } from '../lib/supabase'
+export const revalidate = 0;
 
-export const revalidate = 0
+type Props = {
+  user: User,
+}
+export default function NoteList({ user }: { user: KindeUser }) {
+  const { data: noteData, isLoading: isNotesLoading, isError: isNotesError } = useNoteQuery(user.id);
 
-
-export default function NoteList() {
-  const [currentTitle, setCurrentTitle] = useAtom(currentTitleAtom)
-  const [currentDescription, setCurrentDescription] = useAtom(currentDescriptionAtom)
+  const [currentNoteTitle, setCurrentNoteTitle] = useAtom(currentTitleAtom);
+  const [currentNoteDescription, setCurrentNoteDescription] = useAtom(currentDescriptionAtom);
   const [currentNoteId, setCurrentNoteId] = useAtom(currentNoteIdAtom);
-  const [online, setOnline] = useAtom(onlineAtom);
+  // const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserQuery();
 
-
-  const [noteList, setNoteList] = useAtom<Note[]>(noteListAtom);
-  const [search, setSearch] = useAtom<string>(searchAtom);
-  const { data, isLoading, isError } = useNoteQuery();
-
-  // Create a function to handle inserts
+  // Function to handle inserts
   const handleDbUpdate = (payload: any) => {
     queryClient.invalidateQueries({ queryKey: ['notes'] });
   }
@@ -38,25 +34,24 @@ export default function NoteList() {
   supabase
     .channel('notes')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'notes' }, handleDbUpdate)
-    .subscribe(
-  );
+    .subscribe();
 
-
-
-
-
-  if (isLoading) return (
+  if (isNotesLoading) return (
     <div className='flex flex-col items-center'>
       <div className="skeleton mb-1 rounded w-full h-[40vh]"></div>
-      {/* <div className="skeleton mb-1 rounded w-full h-6"></div>
-      <div className="skeleton mb-1 rounded w-full h-6"></div>
-      <div className="skeleton mb-1 rounded w-full h-6"></div>
-      <div className="skeleton mb-1 rounded w-full h-6"></div>
-      <div className="skeleton mb-1 rounded w-full h-6"></div>
-    <div className="skeleton mb-1 rounded w-full h-6"></div> */}
     </div>
   )
-
+  if (isNotesError) return (
+    <div className='flex flex-col items-center'>
+      <div className="mb-1 rounded w-full h-[40vh] bg-error bg-opacity-20 px-5 py-2">
+        <p className='text-base-content text-2xl text-justify'>
+          Notlar yüklenemedi.
+          <br />
+          Sayfayı yenilemeyi deneyin.
+        </p>
+      </div>
+    </div>
+  )
 
   return (
     <div id="notes"
@@ -85,22 +80,20 @@ export default function NoteList() {
                     Note group 1
                 </div> */}
       {
-        data?.map((note: Note) =>
-          // filteredNotes?.map((note: Note) =>
+        noteData?.map((note: Note) =>
           <div
             key={note.domId}
             className="note mb-1 grid grid-cols-8 gap-0 items-center cursor-pointer"
             id={`note-${note.domId}`}
-            onClick={() => {
-              if (note.description && note.title) {
-                setCurrentTitle(note.title);
-                setCurrentDescription(note.description);
-                setCurrentNoteId(note.domId);
-              }
-
-            }}
           >
-            <div className='flex justify-start items-center  col-span-7 hover:opacity-80'>
+            <div className='flex justify-start items-center col-span-7 transition-all duration-200 px-1 border-b-[1px] border-base-200 hover:border-base-50 '
+              onClick={() => {
+                if (note.description && note.title) {
+                  setCurrentNoteTitle(note.title);
+                  setCurrentNoteDescription(note.description);
+                  setCurrentNoteId(note.domId);
+                }
+              }}>
               <span className="col-span-1 mr-2 icon">
                 <PageIcon />
               </span>
@@ -111,6 +104,7 @@ export default function NoteList() {
               id={note.id} />
           </div>
         )}
+
     </div>
   )
 }
