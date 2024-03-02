@@ -20,3 +20,11 @@ interface CurrentAtom extends Atom<any> {
   title?: string,
   description?: string
 }
+
+type User = {
+  family_name?: string | undefined,
+  given_name?: string | undefined,
+  picture?: string | undefined,
+  email?: string | undefined,
+  id?: string | undefined
+}
