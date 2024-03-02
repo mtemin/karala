@@ -1,31 +1,40 @@
 "use client"
 import { supabase } from "@/app/lib/supabase";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useAtom } from "jotai";
-import { currentDescriptionAtom, currentTitleAtom } from "../_stateStore/atoms";
 import AddPageIcon from "./i-add-page";
 
-// async
-function AddNewNote() {
-  // async
+function AddNewNote({ userId }: { userId: string | undefined }) {
   async function handleAddNote() {
-    await supabase
-      .from('notes')
-      .insert({ title: 'Lorem Ipsum', user_id: "userId", description: `What's on your mind?`, isArchived: false, isParent: false })
-      .then(result => result.status === 201
-        ? console.log("not oluşturuldu")
-        : console.log("not oluşturma başarısız")
-      );
+    event?.preventDefault();
+    event?.stopPropagation();
+    console.log("not oluşturuldu");
+
+    // await supabase
+    //   .from('notes')
+    //   .insert({ title: 'Lorem Ipsum', user_id: userId, description: `What's on your mind?`, isArchived: false, isParent: false })
+    //   .then(result => result.status === 201
+    //     ? console.log("not oluşturuldu")
+    //     : console.log("not oluşturma başarısız")
+    //   );
   }
   return (
     <div
-      className="note py-1 cursor-pointer my-3 mb-1 flex items-center hover:pl-3 hover:text-primary/80 duration-300"
       onClick={handleAddNote}
+      className=" search mb-3 flex items-center cursor-pointer"
     >
-      <span className="icon mr-1">
-        <AddPageIcon className="w-4 h-4" />
-      </span>
-      <p className="white-space-nowrap truncate">Add New Note</p>
+      <label htmlFor="addNewNote" className="absolute p-1 cursor-pointer bg-base-300 rounded-full">
+        <AddPageIcon className="w-5 h-5" />
+      </label>
+      <button
+        // type="text"
+        value="Add New Note"
+        // readOnly
+        className="whitespace-nowrap text-left overflow-hidden cursor-pointer h-8 w-5 rounded-full pl-8 py-1 text-sm bg-base-300 transition-all duration-500 hover:w-36"
+        name="Add New Note"
+        id="addNewNote"
+      >
+        Add New Note
+      </button>
+
     </div>
   );
 }
