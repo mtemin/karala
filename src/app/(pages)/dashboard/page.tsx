@@ -1,23 +1,21 @@
 import React from 'react';
 import UserMenu from "@/app/_components/usermenu";
-import Note from "@/app/_components/note";
+import Note from "@/app/_components/note-inputs";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import ContentBlockModal from "@/app/_components/content-block-modal";
-import { supabase } from '@/app/lib/supabase';
 import { useQuery } from '@tanstack/react-query';
-import { noteListAtom } from '@/app/_stateStore/atoms';
-import { useAtom } from 'jotai';
+import { useAuthQuery } from '@/app/_hooks/useAuthQuery';
 
 export default async function Dashboard() {
-
-    let isLoggedIn = true;
-
+    const { isAuthenticated } = getKindeServerSession();
+    const isLoggedIn = await isAuthenticated();
 
     return (
         <div className="flex h-full justify-between">
+            {/* {!isLoggedIn */}
             {!isLoggedIn
                 && <ContentBlockModal></ContentBlockModal>
-                // : null
+
             }
             <UserMenu></UserMenu>
             <Note></Note>
