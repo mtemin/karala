@@ -4,6 +4,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from 'next/link';
 // import store from '../_stateStore/store';
 
+
 export default async function LandingPage() {
   const { isAuthenticated } = getKindeServerSession();
   const { getUser } = getKindeServerSession();
@@ -18,16 +19,11 @@ export default async function LandingPage() {
               <img src="/karala-beyaz.svg" alt="karala logo" className="w-8 h-8 ml-5" />
             </Link>
             <div className="flex items-center">
-              {isLoggedIn
-                ? <>
-                  <p className="text-xl">
-                    Welcome <span className="font-medium text-primary">{user?.given_name}</span> !
-                  </p>
-                  <LogoutLink
-                    className="whitespace-nowrap ml-24 mr-3 text-xl cursor-pointer text-base-content hover:text-neutral-50 py-1 px-4 ">Log
-                    out</LogoutLink>
-                </>
-                : <LoginLink className="whitespace-nowrap mr-3 text-xl cursor-pointer text-base-content hover:text-neutral-50 py-1 px-4 " >Log in</LoginLink>
+              {!isLoggedIn
+                ? <LoginLink className="whitespace-nowrap mr-3 text-xl cursor-pointer text-base-content hover:text-neutral-50 py-1 px-4 " >Log in</LoginLink>
+                : <LogoutLink
+                  className="whitespace-nowrap ml-24 mr-3 text-xl cursor-pointer text-base-content hover:text-neutral-50 py-1 px-4 ">Log
+                  out</LogoutLink>
               }
             </div>
           </div>
@@ -47,6 +43,9 @@ export default async function LandingPage() {
           {isLoggedIn
             ?
             <>
+              <p className="text-2xl mt-6">
+                Welcome <span className="font-medium text-4xl text-primary">{user?.given_name} !</span>
+              </p>
               <Link
                 className="btn btn-outline px-6 py-2 rounded mt-6 "
                 href="/dashboard">Go to your dashboard</Link>
