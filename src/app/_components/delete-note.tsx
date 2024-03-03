@@ -3,7 +3,7 @@ import React from 'react'
 import { supabase } from '../lib/supabase'
 import { useAtom } from 'jotai';
 import { noteListAtom } from '../_stateStore/atoms';
-import { queryClient } from './react-query-client-provider';
+import { queryClient } from './provider-react-query-client';
 
 export default function DeleteNote({ id, className }: { id: string, className: string }) {
   const [noteList, setNoteList] = useAtom(noteListAtom)
