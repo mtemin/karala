@@ -6,15 +6,13 @@ function AddNewNote({ userId }: { userId: string | undefined }) {
   async function handleAddNote() {
     event?.preventDefault();
     event?.stopPropagation();
-    console.log("not oluşturuldu");
-
-    // await supabase
-    //   .from('notes')
-    //   .insert({ title: 'Lorem Ipsum', user_id: userId, description: `What's on your mind?`, isArchived: false, isParent: false })
-    //   .then(result => result.status === 201
-    //     ? console.log("not oluşturuldu")
-    //     : console.log("not oluşturma başarısız")
-    //   );
+    await supabase
+      .from('notes')
+      .insert({ title: 'Lorem Ipsum', user_id: userId, description: `What's on your mind?`, isArchived: false, isParent: false })
+      .then(result => result.status === 201
+        ? console.log("not oluşturuldu")
+        : console.log("not oluşturma başarısız")
+      );
   }
   return (
     <div
