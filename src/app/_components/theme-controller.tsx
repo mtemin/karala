@@ -5,13 +5,10 @@ import { themeAtom } from "../_stateStore/atoms";
 import PaintBrushIcon from "./i-paintbrush";
 
 
-export default function ThemeController() {
+export default function ThemeController({ className }: { className: string }) {
   const [theme, setTheme] = useAtom(themeAtom);
-  function handleThemeChange(event: MouseEvent) {
-    // (event.target as HTMLInputElement).value)
-  }
   return (
-    <div id="theme-controller" className="dropdown col-span-1 w-full mb-48">
+    <div id="theme-controller" className={className}>
       <div tabIndex={0} role="button" className="btn btn-outline min-h-10 h-10 w-full">
         {/* <PaintBrushIcon className="w-5 h-5 relative left-0" /> */}
         <p className="mr-auto">
