@@ -1,57 +1,44 @@
 "use client"
-import { useAtom } from 'jotai';
-import { currentTitleAtom, currentDescriptionAtom, currentNoteIdAtom } from '../_stateStore/atoms';
-import { supabase } from '../lib/supabase';
 
-export default function Note() {
-    // const [currentNote, setCurrentNote] = useAtom(currentNoteAtom)
-    const [currentNoteTitle, setCurrentNoteTitle] = useAtom(currentTitleAtom);
-    const [currentNoteDescription, setCurrentNoteDescription] = useAtom(currentDescriptionAtom);
-    const [currentNoteId, setCurrentNoteId] = useAtom(currentNoteIdAtom);
+import { useAtom } from "jotai/react";
+import { currentDescriptionAtom, currentNoteIdAtom, currentTitleAtom } from "../_stateStore/atoms";
+import PageIcon from "./i-blank-page";
+import DeleteNote from "./delete-note";
 
-    // const [currentNote, setCurrentNote] = useAtom(currentNoteAtom);
-    // function updateNote () {
-    //     notes.map((note) => ({
+type Props = {
+  id: string
+  domId: number,
+  title?: string | null,
+  description?: string | null,
 
-    //     }) )
-    // }
-    return (
-        <section id="note" className="w-full h-screen flex flex-col justify-between bg-base-200 px-24 py-10 max-sm:px-12">
-            {currentNoteTitle &&
-                <textarea
-                    value={currentNoteTitle}
-                    className="w-full h-16 text-3xl mb-1 p-3 bg-base-200 focus:outline focus:outline-base-50 rounded resize-none"
-                    onChange={(event) => setCurrentNoteTitle(event.target.value)} />
-            }
-            {currentNoteDescription &&
-                <textarea
-                    value={currentNoteDescription}
-                    className="w-full h-full text-lg mb-6 p-3 bg-base-200 focus:outline focus:outline-base-50 rounded overflow-auto resize-none"
-                    onChange={(event) => setCurrentNoteDescription(event.target.value)} />
+}
 
-            }
-            <button
-                type="submit"
-                className="btn btn-primary mt-auto"
-                onClick={() => {
-                    try {
-                        // const { data, error } =
-                        supabase
-                            .from('notes')
-                            .update({
-                                title: currentNoteTitle,
-                                description: currentNoteDescription
-                            })
-                            .eq('domId', currentNoteId)
-                            .select('*')
-                            .then(result => console.log(result))
-
-                    } catch {
-                        console.log("not güncelleme başarısız")
-                    }
-                }}>
-                Save
-            </button>
-        </section>
-    );
+export default function Note({ id, domId, title, description }: Props) {
+  const [currentNoteTitle, setCurrentNoteTitle] = useAtom(currentTitleAtom);
+  const [currentNoteDescription, setCurrentNoteDescription] = useAtom(currentDescriptionAtom);
+  const [currentNoteId, setCurrentNoteId] = useAtom(currentNoteIdAtom);
+  return (
+    <div
+      key={domId}
+      className="note mb-1 grid grid-cols-8 gap-0 items-center cursor-pointer"
+      id={`note-${domId}`}
+      onClick={() => {
+        if (description && title && domId) {
+          setCurrentNoteTitle(title);
+          setCurrentNoteDescription(description);
+          setCurrentNoteId(domId);
+        }
+      }}
+    >
+      <div className='flex justify-start items-center  col-span-7 hover:opacity-80'>
+        <span className="col-span-1 mr-2 icon">
+          <PageIcon />
+        </span>
+        <p className='col-span-6 ml-[-0.3rem] truncate'>{title}</p>
+      </div>
+      <DeleteNote
+        className='col-span-1 min-w-4 min-h-4 w-4 h-4 ml-auto opacity-60  hover:opactiy-100 hover:text-error'
+        id={id} />
+    </div>
+  )
 }
