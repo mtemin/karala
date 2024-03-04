@@ -8,6 +8,7 @@ import ToggleSidebar from "./toggle-sidebar";
 import Settings from "./settings";
 import { supabase } from "../lib/supabase";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
+import Link from "next/link";
 
 export default async function UserMenu() {
     const { getUser } = getKindeServerSession();
@@ -68,7 +69,10 @@ export default async function UserMenu() {
                 </div> */}
             </div>
             <div className="mt-auto">
-                <ThemeController />
+                <Link href="/">
+                    <button className="btn btn-primary mb-3 w-full">Go to landing page</button>
+                </Link>
+                {/* <ThemeController className="dropdown col-span-1 w-full mb-48" /> */}
                 {user
                     ? <LogoutLink
                         className="btn btn-primary col-span-1 text-md cursor-pointer w-full">
