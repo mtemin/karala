@@ -34,7 +34,7 @@ const config: Config = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark", "retro", {
+    themes: ["light", "dark", "retro", "corporate", {
       karala: {
         "primary": "#60a5fa",
         "secondary": "#7dd3fc",
