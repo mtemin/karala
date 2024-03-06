@@ -1,8 +1,13 @@
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/dist/types/server";
+"use server"
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { useAtom } from "jotai/react";
+import { currentUserAtom } from "../_stateStore/atoms";
 
 export async function getUser() {
-  const { isAuthenticated } = getKindeServerSession();
+  const [currentUser, setCurrentUser] = useAtom(currentUserAtom);
   const { getUser } = getKindeServerSession();
-  const isLoggedIn: boolean = await isAuthenticated();
   const user = await getUser();
+  setCurrentUser(user);
+
+  return user;
 }
