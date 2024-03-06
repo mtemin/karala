@@ -6,7 +6,7 @@ import Link from "next/link";
 function ContentBlockModal() {
     return (
         <>
-            <div style={{ zIndex: "100" }} className="z-100 absolute w-full h-full bg-base-300 opacity-80">
+            <div style={{ zIndex: "100" }} className="z-100 absolute w-full h-full bg-base-300 opacity-80 blur-sm">
             </div>
             <div style={{ transform: "translate(-50%)", zIndex: "101" }}
                 className="flex flex-col justify-center items-center absolute px-24 py-12 bg-base-100 top-1/3 left-1/2 rounded-2xl">
