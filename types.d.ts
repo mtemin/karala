@@ -8,15 +8,9 @@ type Note = {
   isArchived: boolean,
   isParent: boolean,
   domId: number
-
 }
 
 type NewNote = {
-  title?: string,
-  description?: string
-}
-
-interface CurrentAtom extends Atom<any> {
   title?: string,
   description?: string
 }
