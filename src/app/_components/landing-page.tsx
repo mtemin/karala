@@ -10,9 +10,10 @@ export default async function LandingPage() {
   const { getUser } = getKindeServerSession();
   const isLoggedIn: boolean = await isAuthenticated();
   const user = await getUser();
+
   return (
     <>
-      <div className="fixed w-full bg-base-300">
+      <div className="fixed w-full bg-primary">
         <div className="max-w-screen-2xl flex justify-between items-center mx-auto">
           <div className="w-full flex items-center justify-between">
             <Link href="/">
@@ -20,9 +21,9 @@ export default async function LandingPage() {
             </Link>
             <div className="flex items-center">
               {!isLoggedIn
-                ? <LoginLink className="whitespace-nowrap mr-3 text-xl cursor-pointer text-base-content hover:text-neutral-50 py-1 px-4 " >Log in</LoginLink>
+                ? <LoginLink className="whitespace-nowrap mr-3 text-xl cursor-pointer text-base-100 hover:text-base-300 py-1 px-4 " >Log in</LoginLink>
                 : <LogoutLink
-                  className="whitespace-nowrap ml-24 mr-3 text-xl cursor-pointer text-base-content hover:text-neutral-50 py-1 px-4 ">Log
+                  className="whitespace-nowrap ml-24 mr-3 text-xl cursor-pointer text-base-100 hover:text-base-300 py-1 px-4 ">Log
                   out</LogoutLink>
               }
             </div>
@@ -58,11 +59,11 @@ export default async function LandingPage() {
           }
         </div>
       </div>
-      <div className="flex justify-between px-10 items-center fixed bg-zinc-900 w-full bottom-0">
-        <p className="cursor-pointer py-1 hover:text-gray-200">
+      <div className="flex justify-between px-10 items-center fixed bg-primary w-full bottom-0">
+        <p className="cursor-pointer py-1 text-base-100 hover:text-base-300">
           Privacy Policy
         </p>
-        <p className="cursor-pointer py-1 hover:text-gray-200">
+        <p className="cursor-pointer py-1 text-base-100 hover:text-base-300">
           Terms&Conditions
         </p>
       </div>
