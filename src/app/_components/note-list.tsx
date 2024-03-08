@@ -1,22 +1,13 @@
 "use client"
 import PageIcon from './i-blank-page';
 import { useAtom } from 'jotai';
-import { currentDescriptionAtom, currentTitleAtom, noteListAtom, searchAtom, onlineAtom, currentNoteIdAtom, currentUserAtom } from '../_stateStore/atoms';
+import { currentDescriptionAtom, currentTitleAtom, currentNoteIdAtom } from '../_stateStore/atoms';
 import DeleteNote from './delete-note';
 import { supabase } from '../lib/supabase';
 import { queryClient } from './provider-react-query-client';
 import useNoteQuery from '../_hooks/useNoteQuery';
-import useUserQuery from '../_hooks/useUserQuery';
-import { useAuthQuery } from '../_hooks/useAuthQuery';
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/dist/types/server';
-import Note from './note';
 import { KindeUser } from '@kinde-oss/kinde-auth-nextjs/dist/types';
 
-export const revalidate = 0;
-
-type Props = {
-  user: User,
-}
 export default function NoteList({ user }: { user: KindeUser }) {
   const { data: noteData, isLoading: isNotesLoading, isError: isNotesError } = useNoteQuery(user.id);
 
@@ -26,7 +17,7 @@ export default function NoteList({ user }: { user: KindeUser }) {
   // const { data: userData, isLoading: isUserLoading, isError: isUserError } = useUserQuery();
 
   // Function to handle inserts
-  const handleDbUpdate = (payload: any) => {
+  const handleDbUpdate = () => {
     queryClient.invalidateQueries({ queryKey: ['notes'] });
   }
 
@@ -86,7 +77,7 @@ export default function NoteList({ user }: { user: KindeUser }) {
             className="note mb-1 grid grid-cols-8 gap-0 items-center cursor-pointer"
             id={`note-${note.domId}`}
           >
-            <div className='flex justify-start items-center col-span-7 transition-all duration-200 px-1 border-b-[1px] border-base-200 hover:border-base-50 '
+            <div className='flex justify-start items-center col-span-7 transition-all duration-200 px-1 hover:pl-2'
               onClick={() => {
                 if (note.description && note.title) {
                   setCurrentNoteTitle(note.title);
