@@ -1,6 +1,6 @@
-import React from 'react'
 
 export default function UpdateNote() {
+
   return (
     <button
       type="submit"
