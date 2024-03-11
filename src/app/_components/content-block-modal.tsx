@@ -26,7 +26,7 @@ function ContentBlockModal() {
                         <LoginLink className="mr-2 bg-primary text-base-100 rounded px-10 py-3">
                             Login
                         </LoginLink>
-                        <RegisterLink className="ml-2 bg-accent text-base-100 rounded px-10 py-3">
+                        <RegisterLink postLoginRedirectURL="/test" className="ml-2 bg-accent text-base-100 rounded px-10 py-3">
                             Register
                         </RegisterLink>
                     </div>

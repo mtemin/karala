@@ -1,7 +1,7 @@
 "use client"
 import { useAtom } from 'jotai';
 import { currentTitleAtom, currentDescriptionAtom, currentNoteIdAtom } from '../_stateStore/atoms';
-import { supabase } from '../lib/supabase';
+import { supabase } from '../_lib/supabase';
 
 export default function Note() {
 

@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { supabase } from '../lib/supabase'
+import { supabase } from '../_lib/supabase'
 import { useAtom } from 'jotai';
 import { noteListAtom } from '../_stateStore/atoms';
 import { queryClient } from './provider-react-query-client';

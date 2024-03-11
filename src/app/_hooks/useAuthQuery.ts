@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAuthentication } from "../queries/getAuthentication";
+import { getAuthentication } from "../_queries/getAuthentication";
 
 export function useAuthQuery() {
   const queryKey = ['auth'];

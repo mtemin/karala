@@ -1,5 +1,5 @@
 "use client"
-import { supabase } from "@/app/lib/supabase";
+import { supabase } from "@/app/_lib/supabase";
 import AddPageIcon from "./i-add-page";
 
 function AddNewNote({ userId }: { userId: string | undefined }) {

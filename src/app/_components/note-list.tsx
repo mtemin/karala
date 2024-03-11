@@ -3,7 +3,7 @@ import PageIcon from './i-blank-page';
 import { useAtom } from 'jotai';
 import { currentDescriptionAtom, currentTitleAtom, currentNoteIdAtom } from '../_stateStore/atoms';
 import DeleteNote from './delete-note';
-import { supabase } from '../lib/supabase';
+import { supabase } from '../_lib/supabase';
 import { queryClient } from './provider-react-query-client';
 import useNoteQuery from '../_hooks/useNoteQuery';
 import { KindeUser } from '@kinde-oss/kinde-auth-nextjs/dist/types';

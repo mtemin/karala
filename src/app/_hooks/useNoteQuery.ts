@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useSupabase from "./useSupabase";
-import { getNotes } from "../queries/getNotes";
+import { getNotes } from "../_queries/getNotes";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 // import { currentUserAtom } from "../_stateStore/atoms";
 

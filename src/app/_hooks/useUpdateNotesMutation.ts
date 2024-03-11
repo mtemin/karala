@@ -1,6 +1,6 @@
 import { useMutation } from "react-query";
 import useSupabase from "./useSupabase";
-import { supabase } from "../lib/supabase";
+import { supabase } from "../_lib/supabase";
 import { queryClient } from '../_components/provider-react-query-client';
 
 async function addNote() {

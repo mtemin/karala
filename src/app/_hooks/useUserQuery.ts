@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../queries/getUser";
+import { getUser } from "../_queries/getUser";
 
 export function useUserQuery() {
   const queryKey = ['user'];

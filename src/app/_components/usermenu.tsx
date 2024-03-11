@@ -6,7 +6,7 @@ import NoteList from "./note-list";
 import SearchNote from "./search-note";
 import ToggleSidebar from "./toggle-sidebar";
 import Settings from "./settings";
-import { supabase } from "../lib/supabase";
+import { supabase } from "../_lib/supabase";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
 import Link from "next/link";
 

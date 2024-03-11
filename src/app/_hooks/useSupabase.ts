@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { getSupabaseBrowserClient } from '../lib/browser-client'
+import { getSupabaseBrowserClient } from '../_lib/browser-client'
 
 function useSupabase() {
   return useMemo(getSupabaseBrowserClient, []);
