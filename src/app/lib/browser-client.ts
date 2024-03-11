@@ -2,14 +2,11 @@ import { createBrowserClient } from '@supabase/ssr';
 import { Database } from '../../../database.types';
 
 let client: ReturnType<typeof createBrowserClient<Database>> | undefined;
-// let client: any;
 
 export function getSupabaseBrowserClient() {
   if (client) {
     return client;
   }
-
-
 
   //@ts-ignore
   client = createBrowserClient<Database>(
