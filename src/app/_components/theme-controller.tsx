@@ -2,7 +2,7 @@
 
 import { useAtom } from "jotai"
 import { themeAtom } from "../_stateStore/atoms";
-import PaintBrushIcon from "./i-paintbrush";
+import PaintBrushIcon from "./icons/i-paintbrush";
 
 
 export default function ThemeController({ className }: { className: string }) {
