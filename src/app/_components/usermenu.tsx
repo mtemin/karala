@@ -9,6 +9,7 @@ import Settings from "./settings";
 import { supabase } from "../_lib/supabase";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
 import Link from "next/link";
+import Archive from "./archive";
 
 export default async function UserMenu() {
     const { getUser } = getKindeServerSession();
@@ -37,42 +38,20 @@ export default async function UserMenu() {
                         <Username user={user} />
                     }
                 </div>
-                <SearchNote />
+                {/* <SearchNote /> */}
                 <Settings />
+                {/* <Archive /> */}
                 <AddNewNote userId={user?.id} />
             </div>
             {user &&
                 <NoteList user={user} />
             }
             <div id="notes" className="">
-                {/* <p id="note-groups"
-                    className="font-bold text-xl flex mb-2 items-center cursor-pointer hover:opacity-80 truncate">
-                    <span className="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            className="w-5 h-5">
-                            <path fillRule="evenodd"
-                                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                                clipRule="evenodd" />
-                        </svg>
-                    </span>Note groups
-                </p>
-                <div className="note-group font-medium flex mb-1 items-center cursor-pointer hover:opacity-80">
-                    <span className="icon rotate-90">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            className="w-5 h-5">
-                            <path fillRule="evenodd"
-                                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                                clipRule="evenodd" />
-                        </svg>
-                    </span>
-                    Note group 1
-                </div> */}
             </div>
             <div className="mt-auto">
                 <Link href="/">
-                    <button className="btn btn-primary mb-3 w-full">Go to landing page</button>
+                    <button className="btn btn-outline mb-3 w-full">Go to landing page</button>
                 </Link>
-                {/* <ThemeController className="dropdown col-span-1 w-full mb-48" /> */}
                 {user
                     ? <LogoutLink
                         className="btn btn-primary col-span-1 text-md cursor-pointer w-full">
