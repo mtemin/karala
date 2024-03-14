@@ -9,7 +9,7 @@ export default function SettingsModal() {
   return (
     <div id="settingsModal" className={settingsModal ? '' : 'hidden'}>
       <div className="z-[9] fixed top-0 left-0 w-full h-full bg-base-200 opacity-70"></div>
-      <div className='z-10 translate-x-[-50%] flex flex-col justify-between flex-wrap absolute rounded-xl p-8 w-[50vw] max-w-[500px] h-[60vh] bg-base-300 left-[50vw] top-[25vh]'>
+      <div className='z-10 translate-x-[-50%] flex flex-col justify-between flex-wrap absolute rounded-xl p-8 max-w-[500px] sm:w-[80vw] h-[60vh] bg-base-300 left-[50vw] top-[25vh]'>
         <button onClick={() => { setSettingsModal(false) }}
           className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         <ThemeControllerButtons />
