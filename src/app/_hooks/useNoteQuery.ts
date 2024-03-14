@@ -9,7 +9,6 @@ export function useNoteQuery(userId: string) {
   const queryKey = ['notes'];
   const client = useSupabase();
 
-
   const queryFn = async () => {
     return getNotes(client, userId).then(
       (result: any) => result.data
