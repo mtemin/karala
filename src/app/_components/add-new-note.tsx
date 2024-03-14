@@ -1,8 +1,12 @@
 "use client"
 import { supabase } from "@/app/_lib/supabase";
-import AddPageIcon from "./i-add-page";
+import AddPageIcon from "./icons/i-add-page";
+import { alertAtom } from "../_stateStore/atoms";
+import { useAtom } from "jotai/react";
 
 function AddNewNote({ userId }: { userId: string | undefined }) {
+  const [alert, setAlert] = useAtom(alertAtom);
+
   async function handleAddNote() {
     event?.preventDefault();
     event?.stopPropagation();
@@ -23,9 +27,7 @@ function AddNewNote({ userId }: { userId: string | undefined }) {
         <AddPageIcon className="w-5 h-5" />
       </label>
       <button
-        // type="text"
         value="Add New Note"
-        // readOnly
         className="whitespace-nowrap text-left overflow-hidden cursor-pointer h-8 w-5 rounded-full pl-8 py-1 text-sm bg-base-300 transition-all duration-500 hover:w-36"
         name="Add New Note"
         id="addNewNote"
