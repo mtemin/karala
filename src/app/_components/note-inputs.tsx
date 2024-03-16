@@ -2,8 +2,9 @@
 import { useAtom } from 'jotai';
 import { currentTitleAtom, currentDescriptionAtom, currentNoteIdAtom } from '../_stateStore/atoms';
 import { supabase } from '../_lib/supabase';
+import { activateAlert } from '../_hooks/useActivateAlert';
 
-export default function Note() {
+export default function NoteInputs() {
 
     const [currentNoteTitle, setCurrentNoteTitle] = useAtom(currentTitleAtom);
     const [currentNoteDescription, setCurrentNoteDescription] = useAtom(currentDescriptionAtom);
@@ -30,21 +31,18 @@ export default function Note() {
                 type="submit"
                 className="btn btn-primary mt-auto"
                 onClick={() => {
-                    try {
-                        // const { data, error } =
-                        supabase
-                            .from('notes')
-                            .update({
-                                title: currentNoteTitle,
-                                description: currentNoteDescription
-                            })
-                            .eq('domId', currentNoteId)
-                            .select('*')
-                            .then(result => console.log(result))
-
-                    } catch {
-                        console.log("not güncelleme başarısız")
-                    }
+                    supabase
+                        .from('notes')
+                        .update({
+                            title: currentNoteTitle,
+                            description: currentNoteDescription
+                        })
+                        .eq('domId', currentNoteId)
+                        .select('*')
+                        .then(result => result.status === 200
+                            ? activateAlert("info")
+                            : activateAlert("error")
+                        );
                 }}>
                 Save
             </button>
