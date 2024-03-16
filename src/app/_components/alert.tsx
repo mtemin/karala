@@ -13,16 +13,16 @@ export default function Alert({ type, text }: Props) {
   let className;
   switch (type) {
     case "success":
-      className = "alert transition-all duration-300 m-[-4rem] z-[1000] alert-success absolute";
+      className = "alert transition-all duration-500 mx-0  mt-[-7rem] z-[1000] alert-success absolute";
       break;
     case "error":
-      className = "alert transition-all duration-300 m-[-4rem] z-[1000] alert-error absolute";
+      className = "alert transition-all duration-500 mx-0  mt-[-7rem] z-[1000] alert-error absolute";
       break;
     case "info":
-      className = "alert transition-all duration-300 m-[-4rem] z-[1000] alert-info absolute";
+      className = "alert transition-all duration-500 mx-0  mt-[-7rem] z-[1000] alert-info absolute";
       break;
     case "warning":
-      className = "alert transition-all duration-300 m-[-4rem] z-[1000] alert-warning absolute";
+      className = "alert transition-all duration-500 mx-0 mt-[-7rem] z-[1000] alert-warning absolute";
       break;
   }
 
