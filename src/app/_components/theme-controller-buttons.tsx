@@ -6,7 +6,7 @@ import { themeAtom } from "../_stateStore/atoms";
 export default function ThemeControllerButtons() {
   const [theme, setTheme] = useAtom(themeAtom);
   return (
-    <div className="themes">
+    <div className="themes w-full">
       <p className='text-base-content font-medium mb-5'>Theme : </p>
       <div className="cursor-pointer flex py-2 px-4 bg-base-500 rounded-btn mb-3"
         data-theme="dark"
