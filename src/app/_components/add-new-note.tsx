@@ -3,6 +3,7 @@ import { supabase } from "@/app/_lib/supabase";
 import AddPageIcon from "./icons/i-add-page";
 import { alertAtom } from "../_stateStore/atoms";
 import { useAtom } from "jotai/react";
+import { activateAlert } from "../_hooks/useActivateAlert";
 
 function AddNewNote({ userId }: { userId: string | undefined }) {
   const [alert, setAlert] = useAtom(alertAtom);
@@ -14,8 +15,8 @@ function AddNewNote({ userId }: { userId: string | undefined }) {
       .from('notes')
       .insert({ title: 'Lorem Ipsum', user_id: userId, description: `What's on your mind?`, isArchived: false, isParent: false })
       .then(result => result.status === 201
-        ? console.log("not oluşturuldu")
-        : console.log("not oluşturma başarısız")
+        ? activateAlert("success")
+        : activateAlert("error")
       );
   }
   return (
