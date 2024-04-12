@@ -2,7 +2,7 @@
 import { useAtom } from "jotai/react";
 import { archiveModalAtom } from "../_stateStore/atoms";
 import ArchiveIcon from "./icons/i-archive";
-import ArchiveModal from "./archive-modal";
+import ArchiveModal from "./ArchiveModal";
 
 function Archive() {
   const [archiveModal, setArchiveModal] = useAtom(archiveModalAtom);

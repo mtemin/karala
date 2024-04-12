@@ -1,5 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next'
-import LandingPage from './_components/landing-page';
+import LandingPage from './_components/LandingPage';
 const metadata: Metadata = {
     title: 'Karala',
     description: 'Notion clone',

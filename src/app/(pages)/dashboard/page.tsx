@@ -1,11 +1,11 @@
 import React from 'react';
-import UserMenu from "@/app/_components/usermenu";
-import NoteInputs from "@/app/_components/note-inputs";
+import UserMenu from "@/app/_components/UserMenu";
+import NoteInputs from "@/app/_components/NoteInputs";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import ContentBlockModal from "@/app/_components/content-block-modal";
+import ContentBlockModal from "@/app/_components/ContentBlockModal";
 import { useQuery } from '@tanstack/react-query';
 import { useAuthQuery } from '@/app/_hooks/useAuthQuery';
-import Alert from '@/app/_components/alert';
+import Alert from '@/app/_components/Alert';
 
 export default async function Dashboard() {
     const { isAuthenticated } = getKindeServerSession();

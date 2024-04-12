@@ -1,15 +1,15 @@
 import { LogoutLink, getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import Username from "@/app/_components/username";
-import AddNewNote from "@/app/_components/add-new-note";
-import ThemeController from "./theme-controller";
+import UserName from "@/app/_components/UserName";
+import AddNewNote from "@/app/_components/AddNewNote";
+import ThemeController from "./ThemeController";
 import NoteList from "./note-list";
-import SearchNote from "./search-note";
-import ToggleSidebar from "./toggle-sidebar";
-import Settings from "./settings";
+import SearchNote from "./SearchNote";
+import ToggleSidebar from "./ToggleSidebar";
+import Settings from "./Settings";
 import { supabase } from "../_lib/supabase";
 import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
 import Link from "next/link";
-import Archive from "./archive";
+import Archive from "./Archive";
 
 export default async function UserMenu() {
     const { getUser } = getKindeServerSession();
@@ -35,7 +35,7 @@ export default async function UserMenu() {
             <div id="user-panel" className="">
                 <div className="flex justify-between text-xl font-bold mb-6 ">
                     {// @ts-ignore}
-                        <Username user={user} />
+                        <UserName user={user} />
                     }
                 </div>
                 {/* <SearchNote /> */}

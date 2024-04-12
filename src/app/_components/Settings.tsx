@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import SettingsIcon from './icons/i-settings'
-import SettingsModal from './settings-modal';
+import SettingsModal from './SettingsModal';
 import { settingsModalAtom } from '../_stateStore/atoms';
 import { useAtom } from 'jotai/react';
 

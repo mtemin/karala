@@ -7,7 +7,7 @@ type Props = {
     user: User,
 
 }
-function Username({ user }: Props) {
+function UserName({ user }: Props) {
     if (!user) return <div className="skeleton mb-1 rounded w-full h-6"></div>
     return (
         <div className="user flex truncate">
@@ -25,4 +25,4 @@ function Username({ user }: Props) {
     );
 }
 
-export default Username;
+export default UserName;

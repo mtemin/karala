@@ -1,10 +1,10 @@
 "use client"
 import { useAtom } from 'jotai/react';
-import ThemeControllerButtons from './theme-controller-buttons';
+import ThemeControllerButtons from './ThemeControllerButtons';
 import { archiveModalAtom } from '../_stateStore/atoms';
 import RestoreIcon from './icons/i-restore';
-import DeleteNote from './delete-note';
-import ArchivedNoteList from './archived-note-list';
+import DeleteNote from './DeleteNote';
+import ArchivedNoteList from './ArchivedNoteList';
 
 
 export default function Archive() {

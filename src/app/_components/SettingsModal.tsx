@@ -1,6 +1,6 @@
 "use client"
 import { useAtom } from 'jotai/react';
-import ThemeControllerButtons from './theme-controller-buttons';
+import ThemeControllerButtons from './ThemeControllerButtons';
 import { settingsModalAtom } from '../_stateStore/atoms';
 
 

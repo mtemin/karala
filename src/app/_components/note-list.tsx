@@ -2,7 +2,7 @@
 import PageIcon from './icons/i-blank-page';
 import { useAtom } from 'jotai';
 import { currentDescriptionAtom, currentTitleAtom, currentNoteIdAtom, archiveModalAtom, searchAtom, noteListAtom } from '../_stateStore/atoms';
-import DeleteNote from './delete-note';
+import DeleteNote from './DeleteNote';
 import { supabase } from '../_lib/supabase';
 import { queryClient } from './provider-react-query-client';
 import useNoteQuery from '../_hooks/useNoteQuery';
