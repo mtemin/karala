@@ -10,6 +10,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-![1](https://i.hizliresim.com/83fp0s7.jpg)
-![2](https://i.hizliresim.com/fqy5r4h.jpg)
+![1](https://i.hizliresim.com/fqy5r4h.jpg)
+![2](https://i.hizliresim.com/83fp0s7.jpg)
 ![3](https://i.hizliresim.com/pqcxvyd.jpg)
