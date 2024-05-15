@@ -3,8 +3,6 @@ import UserMenu from "@/app/_components/UserMenu";
 import NoteInputs from "@/app/_components/NoteInputs";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import ContentBlockModal from "@/app/_components/ContentBlockModal";
-import { useQuery } from '@tanstack/react-query';
-import { useAuthQuery } from '@/app/_hooks/useAuthQuery';
 import Alert from '@/app/_components/Alert';
 
 export default async function Dashboard() {
