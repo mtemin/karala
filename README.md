@@ -1,7 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-<br/>
-*Bu önyüklemesi  [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) ile yapılmış bir [Next.js](https://nextjs.org/) projesidir.*
-
 ## Features ( Özellikler ) : 
 - Light/Dark mode and 2 more theme ( Karanlık/Aydınlık mod ve 2 adet tema )
 - Landing page ( Karşılama Sayfası)
