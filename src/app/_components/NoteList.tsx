@@ -1,10 +1,10 @@
 "use client"
-import PageIcon from './icons/i-blank-page';
+import PageIcon from './icons/BlankPageIcon';
 import { useAtom } from 'jotai';
 import { currentDescriptionAtom, currentTitleAtom, currentNoteIdAtom, archiveModalAtom, searchAtom, noteListAtom } from '../_stateStore/atoms';
 import DeleteNote from './DeleteNote';
 import { supabase } from '../_lib/supabase';
-import { queryClient } from './provider-react-query-client';
+import { queryClient } from './ProviderReactQueryClient';
 import useNoteQuery from '../_hooks/useNoteQuery';
 import { KindeUser } from '@kinde-oss/kinde-auth-nextjs/dist/types';
 
