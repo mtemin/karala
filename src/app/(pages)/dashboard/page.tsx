@@ -1,9 +1,9 @@
 import React from 'react';
 import UserMenu from "@/app/_components/UserMenu";
-import NoteInputs from "@/app/_components/NoteInputs";
+import NoteEditInputs from "@/app/_components/NoteEditInputs";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import ContentBlockModal from "@/app/_components/ContentBlockModal";
-import Alert from '@/app/_components/Alert';
+import Notification from '@/app/_components/Notification';
 
 export default async function Dashboard() {
     const { isAuthenticated } = getKindeServerSession();
@@ -11,14 +11,14 @@ export default async function Dashboard() {
 
     return (
         <div className="flex h-full justify-between">
-            <Alert type="success" text="Note created successfully" />
-            <Alert type="error" text="Process failed!" />
-            <Alert type="info" text="Note updated" />
+            <Notification type="success" />
+            <Notification type="error" />
+            <Notification type="info" />
             {!isLoggedIn
                 && <ContentBlockModal></ContentBlockModal>
             }
             <UserMenu></UserMenu>
-            <NoteInputs></NoteInputs>
+            <NoteEditInputs></NoteEditInputs>
         </div>
     );
 }
