@@ -2,7 +2,7 @@
 import { useAtom } from 'jotai';
 import { currentTitleAtom, currentDescriptionAtom, currentNoteIdAtom } from "../_stateStore/atoms";
 import { supabase } from '../_lib/supabase';
-import { activateAlert } from '../_hooks/useActivateAlert';
+import { useActivateNotification } from '../_hooks/useActivateNotification';
 
 export default function NoteEditInputs() {
 
@@ -19,8 +19,8 @@ export default function NoteEditInputs() {
             .eq('domId', currentNoteId)
             .select('*')
             .then(result => result.status === 200
-                ? activateAlert("info","Note updated successfully.")
-                : activateAlert("error","Error! Note could not be updated.")
+                ? useActivateNotification("info","Note updated successfully.")
+                : useActivateNotification("error","Error! Note could not be updated.")
             );
     }
 

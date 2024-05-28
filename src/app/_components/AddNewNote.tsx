@@ -1,12 +1,9 @@
 "use client"
 import { supabase } from "@/app/_lib/supabase";
-import AddPageIcon from "./icons/i-add-page";
-import { alertAtom } from "../_stateStore/atoms";
-import { useAtom } from "jotai/react";
-import { activateAlert } from "../_hooks/useActivateAlert";
+import AddPageIcon from "./icons/AddPageIcon";
+import { useActivateNotification } from "../_hooks/useActivateNotification";
 
 function AddNewNote({ userId }: { userId: string | undefined }) {
-  const [alert, setAlert] = useAtom(alertAtom);
 
   async function handleAddNote() {
     event?.preventDefault();
@@ -15,8 +12,8 @@ function AddNewNote({ userId }: { userId: string | undefined }) {
       .from('notes')
       .insert({ title: 'Lorem Ipsum', user_id: userId, description: `What's on your mind?`, isArchived: false, isParent: false })
       .then(result => result.status === 201
-        ? activateAlert("success")
-        : activateAlert("error")
+        ? useActivateNotification("success","Note creation successful!")
+        : useActivateNotification("error","Note creation failed!")
       );
   }
   return (
