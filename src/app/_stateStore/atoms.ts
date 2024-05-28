@@ -13,7 +13,6 @@ const searchAtom = atom<string>("");
 const noteListAtom = atom<Note[]>([]);
 const onlineAtom = atom<boolean>(false);
 const themeAtom = atom<string | null>("default");
-const alertAtom = atom<boolean>(false);
 
 export {
   currentTitleAtom,
@@ -27,5 +26,5 @@ export {
   isSidebarVisibleAtom,
   settingsModalAtom,
   archiveModalAtom,
-  alertAtom
+
 }
