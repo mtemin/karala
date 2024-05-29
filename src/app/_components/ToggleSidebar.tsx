@@ -1,6 +1,6 @@
 "use client"
 import { useAtom } from 'jotai';
-import LeftArrowIcon from './icons/i-left-arrow'
+import LeftArrowIcon from './icons/LeftArrowIcon'
 import { isSidebarVisibleAtom } from '../_stateStore/atoms';
 
 export default function ToggleSidebar() {

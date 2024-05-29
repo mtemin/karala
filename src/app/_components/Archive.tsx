@@ -1,7 +1,7 @@
 "use client"
 import { useAtom } from "jotai/react";
 import { archiveModalAtom } from "../_stateStore/atoms";
-import ArchiveIcon from "./icons/i-archive";
+import ArchiveIcon from "./icons/ArchiveIcon";
 import ArchiveModal from "./ArchiveModal";
 
 function Archive() {

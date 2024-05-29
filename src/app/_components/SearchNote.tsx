@@ -2,7 +2,7 @@
 import React from 'react'
 import { searchAtom } from "../_stateStore/atoms";
 import { useAtom } from "jotai";
-import SearchIcon from './icons/i-search';
+import SearchIcon from './icons/SearchIcon';
 
 export default function SearchNote() {
   const [search, setSearch] = useAtom(searchAtom);

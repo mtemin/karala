@@ -1,11 +1,11 @@
 "use client"
-import PageIcon from './icons/i-blank-page';
+import PageIcon from './icons/BlankPageIcon';
 import { useAtom } from 'jotai';
 import { archiveModalAtom } from '../_stateStore/atoms';
 import { supabase } from '../_lib/supabase';
-import { queryClient } from './provider-react-query-client';
+import { queryClient } from './ProviderReactQueryClient';
 import useNoteQuery from '../_hooks/useNoteQuery';
-import RestoreIcon from './icons/i-restore';
+import RestoreIcon from './icons/RestoreIcon';
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import useUserQuery from '../_hooks/useUserQuery';
 import useSupabase from '../_hooks/useSupabase';

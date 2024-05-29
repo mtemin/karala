@@ -2,7 +2,7 @@ import { LogoutLink, getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/
 import UserName from "@/app/_components/UserName";
 import AddNewNote from "@/app/_components/AddNewNote";
 import ThemeController from "./ThemeController";
-import NoteList from "./note-list";
+import NoteList from "./NoteList";
 import SearchNote from "./SearchNote";
 import ToggleSidebar from "./ToggleSidebar";
 import Settings from "./Settings";
@@ -14,19 +14,7 @@ import Archive from "./Archive";
 export default async function UserMenu() {
     const { getUser } = getKindeServerSession();
     let user = await getUser();
-    // async function handlePostUser(user: KindeUser) {
-    //     await supabase
-    //         .from('users')
-    //         .insert({ name: user.given_name, surname: user.family_name, picture: user.picture, email: user.email, id: user.id })
-    //         .then(result => result.status === 201
-    //             ? console.log("Yeni kullanıcı veritabanına kaydedildi")
-    //             : console.log("Kullanıcı veritabanına kaydında HATA!")
-    //         );
-    // }
-    // if (user) {
-    //     console.log(user)
-    //     handlePostUser(user);
-    // }
+
 
     return (
         <aside id="usermenu" className="z-10 relative h-full bg-base-200 flex flex-col w-1/5 border-r-4 px-5 py-10 border-[--foreground] transition-all duration-500

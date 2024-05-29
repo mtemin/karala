@@ -3,7 +3,8 @@ import React from 'react'
 import { supabase } from '../_lib/supabase'
 import { useAtom } from 'jotai';
 import { noteListAtom } from '../_stateStore/atoms';
-import { queryClient } from './provider-react-query-client';
+import { queryClient } from './ProviderReactQueryClient';
+import {useActivateNotification} from "@/app/_hooks/useActivateNotification";
 
 export default function DeleteNote({ id, className }: { id: string, className: string }) {
   const [noteList, setNoteList] = useAtom(noteListAtom)
@@ -15,11 +16,10 @@ export default function DeleteNote({ id, className }: { id: string, className: s
         .delete()
         .eq('id', id)
         .then(result =>
-          console.log(result, `${id} başarıyla silindi`)
+          useActivateNotification("info", "Note deleted successfully!")
         );
-      // queryClient.invalidateQueries({ queryKey: ['notes'] });
     } catch {
-      console.log(`${id} silme başarısız`)
+      useActivateNotification("error","Note deletion failed!")
     }
   }
 

@@ -2,7 +2,7 @@
 import { useAtom } from 'jotai/react';
 import ThemeControllerButtons from './ThemeControllerButtons';
 import { archiveModalAtom } from '../_stateStore/atoms';
-import RestoreIcon from './icons/i-restore';
+import RestoreIcon from './icons/RestoreIcon';
 import DeleteNote from './DeleteNote';
 import ArchivedNoteList from './ArchivedNoteList';
 

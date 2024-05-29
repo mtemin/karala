@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Ubuntu } from 'next/font/google';
 import './globals.css';
-import ReactQueryClientProvider from './_components/provider-react-query-client';
-import ThemeProvider from './_components/provider-theme';
+import ReactQueryClientProvider from './_components/ProviderReactQueryClient';
+import ThemeProvider from './_components/ProviderTheme';
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
