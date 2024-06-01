@@ -2,9 +2,9 @@
 - Light/Dark mode and 2 more theme ( Karanlık/Aydınlık mod ve 2 adet tema )
 - Landing page ( Karşılama Sayfası)
 - Dashboard page for users to change their theme, add, delete and edit notes. ( Kullanıcıların not eklemek, düzenlemek ve silmek, tema değiştirmek için kullanabileceği bir kullanıcı sayfası )
-- Register/Login with OAuth Social connections to Discord, Google, Github. ( Kayıt olma/Giriş yapma özelliği, Discord, Google ve Github bağlantılı )
+- Register/Login with OAuth Social connections to Discord, Google, Github. ( Kayıt olma/Giriş yapma özelliği, *Discord, Google ve Github bağlantılı* )
 - Sidebar with hide and show button ( Açılıp kapatılabilen kullanıcı paneli )
-- Fully responsive pages ( Mobil/Tablet/PC uyumlu sayfalar )
+- Fully responsive pages ( Mobil/Tablet/Bilgisayar uyumlu sayfalar )
 - Content block modal for not-logged in users and settings modal. ( Giriş yapmayan kullanıcılar için içerik gizleme penceresi ve ayarlar penceresi. )
 
 ## Technologies (Kullanılan Teknolojiler ) : 
@@ -26,10 +26,9 @@
 ![Settings Modal](https://i.hizliresim.com/pqcxvyd.jpg)
 
 Mobile
-
-![Landing Page-Mobile](https://i.hizliresim.com/fcrnswa.jpg style="width:33%)
-
-![Dashboard-Mobile](https://i.hizliresim.com/mnbwwkc.jpg style="width:33%)
-
-![Settings Modal-Mobile](https://i.hizliresim.com/sn2skwe.jpg style="width:33%)
+<div style="display:flex;">
+<img src="https://i.hizliresim.com/fcrnswa.jpg" alt="Landing Page-Mobile" style="width:33%;">
+<img src="https://i.hizliresim.com/mnbwwkc.jpg" alt="Dashboard-Mobile" style="width:33%;">
+<img src="https://i.hizliresim.com/sn2skwe.jpg" alt="Settings Modal-Mobile" style="width:33%;">
+</div>
 
