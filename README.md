@@ -27,9 +27,9 @@
 
 Mobile
 
-![Landing Page-Mobile](https://i.hizliresim.com/fcrnswa.jpg)
+![Landing Page-Mobile](https://i.hizliresim.com/fcrnswa.jpg style="width:33%)
 
-![Dashboard-Mobile](https://i.hizliresim.com/mnbwwkc.jpg)
+![Dashboard-Mobile](https://i.hizliresim.com/mnbwwkc.jpg style="width:33%)
 
-![Settings Modal-Mobile](https://i.hizliresim.com/sn2skwe.jpg)
+![Settings Modal-Mobile](https://i.hizliresim.com/sn2skwe.jpg style="width:33%)
 
