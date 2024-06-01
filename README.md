@@ -17,7 +17,6 @@
 ## Live on ( Projeye göz atmak için ) : 
 [Karala](https://karala-note-taking-app.vercel.app/)
 
-
 ## Preview ( Önizleme )
 
 ![Landing Page](https://i.hizliresim.com/fqy5r4h.jpg)
@@ -25,3 +24,12 @@
 ![Dashboard](https://i.hizliresim.com/83fp0s7.jpg)
 
 ![Settings Modal](https://i.hizliresim.com/pqcxvyd.jpg)
+
+Mobile
+
+![Landing Page-Mobile](https://i.hizliresim.com/fcrnswa.jpg)
+
+![Dashboard-Mobile](https://i.hizliresim.com/mnbwwkc.jpg)
+
+![Settings Modal-Mobile](https://i.hizliresim.com/sn2skwe.jpg)
+
