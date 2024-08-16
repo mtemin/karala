@@ -1,3 +1,7 @@
+### Note taking app inspired by [Notion](https://www.notion.so/)
+
+*Karala means **scribble** or **sketch** in Turkish.*
+
 ## Features ( Özellikler ) : 
 - Light/Dark mode and 2 more theme ( Karanlık/Aydınlık mod ve 2 adet tema )
 - Landing page ( Karşılama Sayfası)
