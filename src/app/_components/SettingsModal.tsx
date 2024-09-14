@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { useAtom } from 'jotai/react';
 import ThemeControllerButtons from './ThemeControllerButtons';
 import { settingsModalAtom } from '../_stateStore/atoms';
