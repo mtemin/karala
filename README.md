@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 ### Note taking app inspired by [Notion](https://www.notion.so/)
 
 *Karala means **scribble** or **sketch** in Turkish.*
+=======
+*This project uses supabase free plan and goes offline when its not used, reach me out if you want to browse the site*
+>>>>>>> Stashed changes
 
 ## Features ( Özellikler ) : 
 - Light/Dark mode and 2 more theme ( Karanlık/Aydınlık mod ve 2 adet tema )
@@ -19,7 +23,7 @@
 
 
 ## Live on ( Projeye göz atmak için ) : 
-[Karala](https://karala-note-taking-app.vercel.app/)
+[Karala](https://karala.vercel.app/)
 
 ## Preview ( Önizleme )
 
@@ -35,4 +39,3 @@ Mobile
 <img src="https://i.hizliresim.com/mnbwwkc.jpg" alt="Dashboard-Mobile" style="width:33%;">
 <img src="https://i.hizliresim.com/sn2skwe.jpg" alt="Settings Modal-Mobile" style="width:33%;">
 </div>
-
