@@ -32,7 +32,7 @@ export default function NoteList({ user }: { user: KindeUser }) {
     <div className='flex flex-col items-center'>
       <div className="mb-1 rounded w-full h-[40vh] bg-error bg-opacity-20 px-5 py-2">
         <p className='text-base-content text-2xl text-justify'>
-          Notes couldn't be loaded.
+          Notes couldn&apos;t be loaded.
           <br />
           Try refreshing the page.
         </p>

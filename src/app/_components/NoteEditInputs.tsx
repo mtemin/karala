@@ -9,6 +9,8 @@ export default function NoteEditInputs() {
     const [currentNoteTitle, setCurrentNoteTitle] = useAtom(currentTitleAtom);
     const [currentNoteDescription, setCurrentNoteDescription] = useAtom(currentDescriptionAtom);
     const [currentNoteId, setCurrentNoteId] = useAtom(currentNoteIdAtom);
+    const notify = useActivateNotification();
+
     function handleUpdateNote(){
         supabase
             .from('notes')
@@ -19,15 +21,15 @@ export default function NoteEditInputs() {
             .eq('domId', currentNoteId)
             .select('*')
             .then(result => result.status === 200
-                ? useActivateNotification("info","Note updated successfully.")
-                : useActivateNotification("error","Error! Note could not be updated.")
+                ? notify("info","Note updated successfully.")
+                : notify("error","Error! Note could not be updated.")
             );
     }
 
     if(!currentNoteId) return (
             <p className="w-full h-screen py-10 px-24 max-sm:px-12 text-center text-2xl opacity-40 hover:opacity-80 transition-all duration-700 text-primary tracking-wider">
             Please
-            select a note, or add one if you don't have any.
+            select a note, or add one if you don&apos;t have any.
             </p>
     )
 

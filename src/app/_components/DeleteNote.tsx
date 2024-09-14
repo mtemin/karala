@@ -8,6 +8,7 @@ import {useActivateNotification} from "@/app/_hooks/useActivateNotification";
 
 export default function DeleteNote({ id, className }: { id: string, className: string }) {
   const [noteList, setNoteList] = useAtom(noteListAtom)
+  const notify = useActivateNotification();
 
   function handleDeleteNote() {
     try {
@@ -16,10 +17,10 @@ export default function DeleteNote({ id, className }: { id: string, className: s
         .delete()
         .eq('id', id)
         .then(result =>
-          useActivateNotification("info", "Note deleted successfully!")
+          notify("info", "Note deleted successfully!")
         );
     } catch {
-      useActivateNotification("error","Note deletion failed!")
+      notify("error","Note deletion failed!")
     }
   }
 

@@ -4,6 +4,7 @@ import AddPageIcon from "./icons/AddPageIcon";
 import { useActivateNotification } from "../_hooks/useActivateNotification";
 
 function AddNewNote({ userId }: { userId: string | undefined }) {
+  const notify = useActivateNotification();
 
   async function handleAddNote() {
     event?.preventDefault();
@@ -12,8 +13,8 @@ function AddNewNote({ userId }: { userId: string | undefined }) {
       .from('notes')
       .insert({ title: 'Lorem Ipsum', user_id: userId, description: `What's on your mind?`, isArchived: false, isParent: false })
       .then(result => result.status === 201
-        ? useActivateNotification("success","Note creation successful!")
-        : useActivateNotification("error","Note creation failed!")
+        ? notify("success","Note creation successful!")
+        : notify("error","Note creation failed!")
       );
   }
   return (

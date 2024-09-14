@@ -2,6 +2,7 @@ import React from 'react';
 import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import Link from 'next/link';
+import Image from 'next/image';
 // import store from '../_stateStore/store';
 
 
@@ -17,7 +18,7 @@ export default async function LandingPage() {
         <div className="max-w-screen-2xl flex justify-between items-center mx-auto">
           <div className="w-full flex items-center justify-between">
             <Link href="/">
-              <img src="/karala-beyaz.svg" alt="karala logo" className="w-8 h-8 ml-5" />
+              <Image src="/karala-beyaz.svg" alt="karala logo" className="w-8 h-8 ml-5" />
             </Link>
             <div className="flex items-center">
               {!isLoggedIn
