@@ -1,10 +1,9 @@
-<<<<<<< Updated upstream
+*This project uses supabase free plan and goes offline when its not used, reach me out if you want to browse the site*
+
 ### Note taking app inspired by [Notion](https://www.notion.so/)
 
 *Karala means **scribble** or **sketch** in Turkish.*
-=======
-*This project uses supabase free plan and goes offline when its not used, reach me out if you want to browse the site*
->>>>>>> Stashed changes
+
 
 ## Features ( Özellikler ) : 
 - Light/Dark mode and 2 more theme ( Karanlık/Aydınlık mod ve 2 adet tema )
