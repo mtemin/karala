@@ -20,10 +20,10 @@ export default function SettingsModal() {
           <div className="flags flex items-center ml-6">
 
             {/*<div className="tooltip cursor-pointer" data-tip="English">*/}
-              <Image src="GB.svg" alt="en-flag" className='opacity-70 w-10 rounded' />
+              <Image src="GB.svg" width="40" height="40" alt="en-flag" className='opacity-70 w-10 rounded' />
             {/*</div>*/}
             {/*<div className="tooltip cursor-pointer  ml-6" data-tip="Turkish">*/}
-              <Image src="TR.svg" alt="tr-flag" className='opacity-70 w-10 rounded' data-tip="Turkish" />
+              <Image src="TR.svg" width="40" height="40" alt="tr-flag" className='opacity-70 w-10 rounded' data-tip="Turkish" />
             {/*</div>*/}
           </div>
         </div>
