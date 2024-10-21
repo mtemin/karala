@@ -34,7 +34,8 @@
 
 Mobile
 <div style="display:flex;">
-<img src="https://i.hizliresim.com/fcrnswa.jpg" alt="Landing Page-Mobile" style="width:33%;">
-<img src="https://i.hizliresim.com/mnbwwkc.jpg" alt="Dashboard-Mobile" style="width:33%;">
-<img src="https://i.hizliresim.com/sn2skwe.jpg" alt="Settings Modal-Mobile" style="width:33%;">
+<img src="https://i.hizliresim.com/fcrnswa.jpg" alt="Landing Page-Mobile" style="width:32%;">
+<img src="https://i.hizliresim.com/mnbwwkc.jpg" alt="Dashboard-Mobile" style="width:32%;">
+<img src="https://i.hizliresim.com/sn2skwe.jpg" alt="Settings Modal-Mobile" style="width:32%;">
 </div>
+
