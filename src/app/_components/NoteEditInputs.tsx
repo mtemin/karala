@@ -39,14 +39,14 @@ export default function NoteEditInputs() {
             <textarea
                 id="noteTitleInput"
                 value={currentNoteTitle}
-                className="w-full h-16 text-3xl mb-1 p-3 bg-base-200 outline opacity-40 transition-all duration-300 focus:opacity-100 outline-base-50 focus:outline focus:outline-50 rounded resize-none"
+                className="w-full h-16 text-3xl mb-1 p-3 bg-base-200 outline opacity-60 hover:opacity-80 transition-all duration-300 focus:opacity-100 outline-base-50 focus:outline focus:outline-50 rounded resize-none"
                 onChange={(event) => setCurrentNoteTitle(event.target.value)} />
 
 
             <textarea
                 id="noteDescriptionInput"
                 value={currentNoteDescription}
-                className="w-full h-full text-lg mb-6 mt-3 p-3 bg-base-200 outline opacity-40 transition-all duration-300 focus:opacity-100 outline-base-50 focus:outline focus:outline-50 rounded overflow-auto resize-none"
+                className="w-full h-full text-lg mb-6 mt-3 p-3 bg-base-200 outline opacity-60 hover:opacity-80 transition-all duration-300 focus:opacity-100 outline-base-50 focus:outline focus:outline-50 rounded overflow-auto resize-none"
                 onChange={(event) => setCurrentNoteDescription(event.target.value)} />
 
 
