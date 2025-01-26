@@ -7,13 +7,13 @@ import SearchNote from "./SearchNote";
 import ToggleSidebar from "./ToggleSidebar";
 import Settings from "./Settings";
 import { supabase } from "../_lib/supabase";
-import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/dist/types";
 import Link from "next/link";
 import Archive from "./Archive";
+import {KindeUser} from "@kinde-oss/kinde-auth-nextjs/types";
 
 export default async function UserMenu() {
     const { getUser } = getKindeServerSession();
-    let user = await getUser();
+    let user:KindeUser = await getUser();
 
 
     return (

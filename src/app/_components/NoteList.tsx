@@ -6,7 +6,7 @@ import DeleteNote from './DeleteNote';
 import { supabase } from '../_lib/supabase';
 import { queryClient } from './ProviderReactQueryClient';
 import useNoteQuery from '../_hooks/useNoteQuery';
-import { KindeUser } from '@kinde-oss/kinde-auth-nextjs/dist/types';
+import {KindeUser} from "@kinde-oss/kinde-auth-nextjs/types";
 
 export default function NoteList({ user }: { user: KindeUser }) {
   const { data: noteData, isLoading: isNotesLoading, isError: isNotesError } = useNoteQuery(user.id);
