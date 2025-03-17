@@ -10,7 +10,7 @@ const ubuntu = Ubuntu({
   variable: '--font-ubuntu'
 })
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: 'Karala',
   description: 'Notion clone',
   icons: {
